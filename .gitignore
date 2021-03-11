@@ -1,2 +1,3 @@
 # Solidity compilation (https://docs.openzeppelin.com/learn/developing-smart-contracts?pref=truffle#compiling-solidity-source-code)
 build/contracts
+node_modules/
