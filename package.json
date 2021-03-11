@@ -18,6 +18,8 @@
     "@openzeppelin/test-helpers": "^0.5.10",
     "chai": "^4.3.3",
     "ganache-cli": "^6.12.2",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.6"
   }
 }
