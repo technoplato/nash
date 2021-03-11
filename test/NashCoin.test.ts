@@ -26,4 +26,23 @@ contract("NashCoin", ([owner, other]) => {
     expect(await nash.symbol()).to.be.equal("NASH");
     expect(await nash.name()).to.be.equal("NashCoin");
   });
+
+  it("should add new accounts with a starting balance of 0", async () => {
+    const nash = await deployProxy(NashCoin);
+
+    await nash.addUser(other);
+
+    expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(0));
+  });
+
+  it("should equally distribute doubling of supply", async () => {
+    const nash = await deployProxy(NashCoin);
+
+    await nash.addUser(other);
+
+    await nash.distribute({ from: owner });
+
+    expect(await nash.balanceOf(owner)).to.be.bignumber.equal(new BN(1.5));
+    expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(10.5));
+  });
 });
