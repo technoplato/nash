@@ -7,8 +7,10 @@
     "test": "test"
   },
   "scripts": {
+    "types:generate": "typechain --target=truffle-v5 'build/contracts/*.json'",
+    "postinstall": "truffle compile && npm run types:generate",
     "test": "truffle test",
-    "test:watch": "nodemon -e js,sol --exec 'truffle test'"
+    "test:watch": "nodemon -e ts,sol --exec 'truffle test'"
   },
   "keywords": [],
   "author": "",
