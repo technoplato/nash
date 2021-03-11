@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test",
+    "test:watch": "nodemon -e js,sol --exec 'truffle test'"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@openzeppelin/contracts": "^3.4.1",
     "@openzeppelin/test-helpers": "^0.5.10",
     "chai": "^4.3.3",
-    "ganache-cli": "^6.12.2"
+    "ganache-cli": "^6.12.2",
+    "nodemon": "^2.0.7"
   }
 }
