@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "watch": [
+    "contracts/",
+    "scripts/",
+    "test/"
+  ],
+  "execMap": {
+    "js": "truffle test",
+    "sol": "truffle test"
+  },
+  "ext": "js,sol"
+}
