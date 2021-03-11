@@ -3,7 +3,7 @@ import { BoxContract, BoxInstance } from "../types/truffle-contracts";
 import Accounts = Truffle.Accounts;
 
 const { expect } = require("chai");
-const { BN, expectEvent, expectRevert } = require("@openzeppelin/test-helpers");
+const { BN } = require("@openzeppelin/test-helpers");
 
 const Box = artifacts.require("Box");
 

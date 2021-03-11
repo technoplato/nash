@@ -10,7 +10,8 @@
     "types:generate": "typechain --target=truffle-v5 'build/contracts/*.json'",
     "postinstall": "truffle compile && npm run types:generate",
     "test": "truffle test",
-    "test:watch": "nodemon -e ts,sol --exec 'truffle test'"
+    "test:watch": "nodemon -e ts,sol --exec 'truffle test'",
+    "truffle:migrate": "truffle migrate"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@openzeppelin/contracts": "^3.4.1",
     "@openzeppelin/test-helpers": "^0.5.10",
+    "@openzeppelin/truffle-upgrades": "^1.5.0",
     "@typechain/truffle-v5": "^4.0.1",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^8.2.1",
