@@ -1,7 +1,7 @@
 const NashCoin = artifacts.require("NashCoin");
 
 const { BN, expectEvent, expectRevert } = require("@openzeppelin/test-helpers");
-const { expect } = require("chai");
+// const { expect } = require("chai");
 
 contract("NashCoin", ([owner, other]) => {
   // it("retrieve returns a value previously stored", async () => {
