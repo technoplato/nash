@@ -10,7 +10,7 @@ contract NashCoin is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     function initialize() public initializer {
         __ERC20_init("NashCoin", "NASH");
         __Ownable_init_unchained();
-        _mint(_msgSender(), 10.5);
+        _mint(_msgSender(), 1);
     }
 
     function addUser(address newUser) public returns (bool) {

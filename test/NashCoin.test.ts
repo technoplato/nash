@@ -3,6 +3,7 @@ const NashCoin = artifacts.require("NashCoin");
 const { BN, expectEvent, expectRevert } = require("@openzeppelin/test-helpers");
 // @ts-ignore
 const { expect } = require("chai");
+const { deployProxy } = require("@openzeppelin/truffle-upgrades");
 
 contract("NashCoin", ([owner, other]) => {
   it("should not allow a non owner to distribute tokens", async () => {
@@ -19,8 +20,6 @@ contract("NashCoin", ([owner, other]) => {
     expect(supplyBn).to.be.bignumber.equal(new BN(1));
   });
 
-  const { deployProxy } = require("@openzeppelin/truffle-upgrades");
-
   it("should have correct metadata", async () => {
     const nash = await deployProxy(NashCoin);
     expect(await nash.symbol()).to.be.equal("NASH");
@@ -35,14 +34,14 @@ contract("NashCoin", ([owner, other]) => {
     expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(0));
   });
 
-  it("should equally distribute doubling of supply", async () => {
+  it("should add one token to every 'member' upon each distribution event", async () => {
     const nash = await deployProxy(NashCoin);
 
     await nash.addUser(other);
 
     await nash.distribute({ from: owner });
 
-    expect(await nash.balanceOf(owner)).to.be.bignumber.equal(new BN(1.5));
-    expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(10.5));
+    expect(await nash.balanceOf(owner)).to.be.bignumber.equal(new BN(2));
+    expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(1));
   });
 });
