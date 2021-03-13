@@ -14,6 +14,14 @@ contract("NashCoin", ([owner, other]) => {
     );
   });
 
+  it("should not allow a non owner to add users", async () => {
+    const nash = await deployProxy(NashCoin);
+    await expectRevert(
+      nash.addUser(other, { from: other }),
+      "Ownable: caller is not the owner"
+    );
+  });
+
   it("should have an initial supply of 1", async () => {
     const nash = await deployProxy(NashCoin);
     const supplyBn = await nash.totalSupply();

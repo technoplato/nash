@@ -22,7 +22,7 @@ contract NashCoin is Initializable, ERC20Upgradeable, OwnableUpgradeable {
         allowDistribute = false;
     }
 
-    function addUser(address newUser) public returns (bool) {
+    function addUser(address newUser) public onlyOwner returns (bool) {
         require(
             !members.contains(newUser),
             "NashCoin: Cannot add a user that has previously been added."
