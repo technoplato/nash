@@ -34,6 +34,25 @@ contract("NashCoin", ([owner, other]) => {
     expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(0));
   });
 
+  it("should not allow distribute events if no new users have been added since previous distribution event", async () => {
+    const nash = await deployProxy(NashCoin);
+    await expectRevert(
+      nash.distribute({ from: owner }),
+      "NashCoin: No new users since previous distribution event."
+    );
+  });
+
+  it("should not add addresses that are already involved", async () => {
+    const nash = await deployProxy(NashCoin);
+
+    await nash.addUser(other);
+
+    await expectRevert(
+      nash.addUser(other),
+      "NashCoin: Cannot add a user that has previously been added."
+    );
+  });
+
   it("should add one token to every 'member' upon each distribution event", async () => {
     const nash = await deployProxy(NashCoin);
 
