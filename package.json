@@ -20,6 +20,7 @@
     "@openzeppelin/contracts-upgradeable": "^3.4.1",
     "@openzeppelin/test-helpers": "^0.5.10",
     "@openzeppelin/truffle-upgrades": "^1.5.0",
+    "@truffle/hdwallet-provider": "^1.2.3",
     "@typechain/truffle-v5": "^4.0.1",
     "@types/chai": "^4.2.15",
     "@types/mocha": "^8.2.1",

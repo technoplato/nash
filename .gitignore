@@ -8,3 +8,5 @@ types
 # builder
 artifacts
 cache
+
+secrets.json

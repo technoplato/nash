@@ -24,6 +24,9 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
+const { alchemyApiKey, mnemonic } = require("./secrets.json");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+
 require("ts-node").register({
   files: true,
 });
@@ -51,6 +54,18 @@ module.exports = {
       port: 8545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
     },
+
+    rinkeby: {
+      provider: () =>
+        new HDWalletProvider(
+          mnemonic,
+          `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`
+        ),
+      network_id: 4,
+      gasPrice: 10e9,
+      skipDryRun: true,
+    },
+
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
