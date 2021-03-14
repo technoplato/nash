@@ -11,7 +11,9 @@
     "postinstall": "truffle compile && npm run types:generate",
     "test": "truffle test",
     "test:watch": "nodemon -e ts,sol --exec 'truffle compile --all && truffle test'",
-    "truffle:migrate": "truffle migrate --compile-all"
+    "truffle:migrate": "truffle migrate --compile-all",
+    "console:rinkeby": "truffle console --network rinkeby",
+    "verify:rinkeby": "truffle run verify NashCoin --network rinkeby"
   },
   "keywords": [],
   "author": "",
