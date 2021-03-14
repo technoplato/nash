@@ -24,7 +24,7 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-const { alchemyApiKey, mnemonic } = require("./secrets.json");
+const { alchemyApiKey, mnemonic, etherscanApiKey } = require("./secrets.json");
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 require("ts-node").register({
@@ -121,5 +121,11 @@ module.exports = {
 
   db: {
     enabled: false,
+  },
+
+  plugins: ["truffle-plugin-verify"],
+
+  api_keys: {
+    etherscan: etherscanApiKey,
   },
 };
