@@ -7,7 +7,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/EnumerableSetUpgradeable.sol";
 
-contract NashCoinV2 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
+contract NashCoinV3 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     bool allowDistribute;
 
     using EnumerableSetUpgradeable for EnumerableSetUpgradeable.AddressSet;
@@ -52,7 +52,7 @@ contract NashCoinV2 is Initializable, ERC20Upgradeable, OwnableUpgradeable {
         return members.length() * 2;
     }
 
-    function shorty() public view returns (uint256) {
-        return members.length() * 2;
+    function shorty3() public view returns (uint256) {
+        return members.length() * 3;
     }
 }

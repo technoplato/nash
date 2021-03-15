@@ -82,6 +82,6 @@ contract("NashCoin", ([owner, other]) => {
     // @ts-ignore
     const upgrade = await upgradeProxy(instance.address, NashCoinV2);
 
-    expect(await upgrade.n()).to.be.bignumber.equal(new BN(2));
+    expect(await upgrade.number()).to.be.bignumber.equal(new BN(2));
   });
 });

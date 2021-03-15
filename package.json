@@ -14,7 +14,7 @@
     "migrate:development": "truffle migrate --compile-all --network development",
     "console:development": "truffle console --network development",
     "verify:development": "truffle run verify NashCoin --network development",
-    "migrate:rinkeby": "truffle migrate --compile-all --network rinkeby",
+    "migrate:rinkeby": "truffle migrate --network rinkeby",
     "console:rinkeby": "truffle console --network rinkeby",
     "verify:rinkeby": "truffle run verify NashCoinV2 --network rinkeby"
   },
