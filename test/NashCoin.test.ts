@@ -1,4 +1,7 @@
+import { upgradeProxy } from "@openzeppelin/truffle-upgrades";
+
 const NashCoin = artifacts.require("NashCoin");
+const NashCoinV2 = artifacts.require("NashCoinV2");
 
 const { BN, expectEvent, expectRevert } = require("@openzeppelin/test-helpers");
 // @ts-ignore
@@ -70,5 +73,15 @@ contract("NashCoin", ([owner, other]) => {
 
     expect(await nash.balanceOf(owner)).to.be.bignumber.equal(new BN(2));
     expect(await nash.balanceOf(other)).to.be.bignumber.equal(new BN(1));
+  });
+
+  it("should work before and after upgrading", async () => {
+    const instance = await deployProxy(NashCoin);
+    await instance.addUser(other, { from: owner });
+
+    // @ts-ignore
+    const upgrade = await upgradeProxy(instance.address, NashCoinV2);
+
+    expect(await upgrade.n()).to.be.bignumber.equal(new BN(2));
   });
 });

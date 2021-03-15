@@ -87,7 +87,7 @@
           {
             "contract": "NashCoin",
             "label": "members",
-            "type": "t_struct(AddressSet)1919_storage",
+            "type": "t_struct(AddressSet)1972_storage",
             "src": "NashCoin.sol:15"
           }
         ],
@@ -95,16 +95,171 @@
           "t_bool": {
             "label": "bool"
           },
-          "t_struct(AddressSet)1919_storage": {
+          "t_struct(AddressSet)1972_storage": {
             "label": "struct EnumerableSetUpgradeable.AddressSet",
             "members": [
               {
                 "label": "_inner",
-                "type": "t_struct(Set)1654_storage"
+                "type": "t_struct(Set)1707_storage"
               }
             ]
           },
-          "t_struct(Set)1654_storage": {
+          "t_struct(Set)1707_storage": {
+            "label": "struct EnumerableSetUpgradeable.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)"
+              }
+            ]
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]"
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_array(t_uint256)44_storage": {
+            "label": "uint256[44]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "b7ec355d295e8979d1227b7399510ed7ecf7da279b98b667453e8afb0be9ece4": {
+      "address": "0x25311bd40319c9f548873300862B55A3A00fF4F6",
+      "txHash": "0xc6bba808ae8dc9ba14aa90d53506e304a710b3a5c7b5346b6df1f1a63e2295f5",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:25"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/Initializable.sol:30"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:31"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "_balances",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:37"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:39"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "_totalSupply",
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:41"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:43"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:44"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:45"
+          },
+          {
+            "contract": "ERC20Upgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)44_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:312"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "../@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:20"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:75"
+          },
+          {
+            "contract": "NashCoinV2",
+            "label": "allowDistribute",
+            "type": "t_bool",
+            "src": "NashCoinV2.sol:11"
+          },
+          {
+            "contract": "NashCoinV2",
+            "label": "members",
+            "type": "t_struct(AddressSet)1972_storage",
+            "src": "NashCoinV2.sol:15"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_struct(AddressSet)1972_storage": {
+            "label": "struct EnumerableSetUpgradeable.AddressSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)1707_storage"
+              }
+            ]
+          },
+          "t_struct(Set)1707_storage": {
             "label": "struct EnumerableSetUpgradeable.Set",
             "members": [
               {
